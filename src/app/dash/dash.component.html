@@ -1,0 +1,78 @@
+<div class="container">
+    <div class="row">
+      <div class="col">
+        <button type="button" class="btn btn-primary" routerLink="/ModPay">
+            Crear Nuevo Pedido
+        </button>
+      </div>
+      <div class="col">
+        
+      </div>
+      <div class="col">
+        
+      </div>
+    </div>
+    <div class="row">
+      <div class="col btn-dash">
+        <button class="btn btn-primary" (click)="open(content)">
+          <h2>Adiciona tus productos</h2>
+        </button>
+      </div>
+      <div class="col btn-dash">
+        <button class="btn btn-primary" routerLink="/modAdmin">
+          <h2>Validar Inventario</h2>
+        </button>
+      </div>
+      <div class="col btn-dash">
+        <button class="btn btn-primary" routerLink="/modPedido">
+          <h2>Historial de Facturas</h2>
+        </button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col btn-dash">
+        <button class="btn btn-primary" routerLink="/modAdmin">
+          <h3>Reporte día</h3>
+          <h2>{{fecha | date}}</h2>
+        </button>
+      </div>
+      <div class="col btn-dash">
+        <button class="btn btn-primary" routerLink="/modAdmin">
+          <h3>Reporte Mes</h3>
+          <h2>{{fecha | date:'LLLL'}}</h2>
+        </button>
+      </div>
+      <div class="col btn-dash">
+        <a routerLink="/modAdmin"></a>
+        
+      </div>
+    </div>
+</div>
+
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Adiciona tus Productos</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Nombre de Producto" aria-label="Username" aria-describedby="basic-addon1">
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Cant</span>
+        <input type="text" class="form-control" placeholder="Cantidad" aria-label="Username" aria-describedby="basic-addon1">
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">$</span>
+        <input type="text" class="form-control" placeholder="Valor Unitario" aria-label="Username" aria-describedby="basic-addon1">
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Guardar producto</button>
+  </div>
+</ng-template>

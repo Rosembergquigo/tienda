@@ -1,0 +1,31 @@
+
+<div class="container">
+    <div>
+        
+    </div>
+
+    <table class="table table-striped">
+    <thead>
+    <tr>
+        <th scope="col">#Recibo</th>
+        <th scope="col">Fecha Compra</th>
+        <th scope="col">Identificación</th>
+        <th scope="col">Valor Total</th>
+        <th scope="col">Precio Unitario</th>
+        <th scope="col">Ver Recibo</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let pedido of pedidos" class="warning">
+        <th scope="row">{{ pedido.id_recibo }}</th>
+        <td>
+        {{ pedido.fecha }}
+        </td>
+        <td>{{ pedido.cedula }}</td>
+        <td>{{ pedido.cedula }}</td>
+        <td>{{ pedido.valor_total }}</td>
+        <td><button type="button" name="editar" class="btn btn-primary btn-sm">Imprimir</button></td>
+    </tr>
+    </tbody>
+    </table>
+</div>

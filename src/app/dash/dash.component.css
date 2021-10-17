@@ -1,0 +1,40 @@
+img {
+    display:block;
+    margin:auto;
+}
+
+h5
+{
+    text-align: center;
+    color: black;
+}
+
+a
+{
+    text-decoration: none;
+}
+
+.btn-dash
+{
+    background-color: aquamarine;
+    height: 150px;
+    width: 50px;
+    border-radius: 5px;
+}
+
+.col
+{
+    margin: 10px;
+}
+
+.btn-dash a{
+    height: 100%;
+    width: 100%;
+    display:block;
+}
+
+.btn-dash button{
+    height: 100%;
+    width: 100%;
+    display:block;
+}

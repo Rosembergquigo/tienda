@@ -1,0 +1,11 @@
+1. Toma de pedido.
+	registro de productos del pedido (permitir el registros de los productos 
+    bien sea ingresando el código del producto, el nombre, 
+2. Emisión de factura.
+3. **Manejo de inventario (deseable).
+	Alerta de existencia de pocas unidades de un producto
+4. Gestión de precio de productos(actualización de los precios).
+	Ingreso manual de precios y generación de alerta
+    (qué productos subieron y/o bajaron su precio).
+5. Historial de facturas (Detalle de las facturas emitidas).
+6. Reportes de lo vendido en el día y en el mes.
