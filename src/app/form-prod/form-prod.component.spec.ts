@@ -1,21 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import swal from 'sweetalert';
 
-import { DashComponent } from './dash.component';
+import { FormProdComponent } from './form-prod.component';
 
-describe('DashComponent', () => {
-  let component: DashComponent;
-  let fixture: ComponentFixture<DashComponent>;
+describe('FormProdComponent', () => {
+  let component: FormProdComponent;
+  let fixture: ComponentFixture<FormProdComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DashComponent ]
+      declarations: [ FormProdComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DashComponent);
+    fixture = TestBed.createComponent(FormProdComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

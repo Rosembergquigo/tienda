@@ -11,7 +11,7 @@ export const recibo :Recibo [] =
             {
                producto:
                {
-                id_producto: 1,
+                id_Producto: 1,
                 cantidad: 100,
                 precio: 500,
                 descripcion: 'Panela'
@@ -22,7 +22,7 @@ export const recibo :Recibo [] =
             {
                 producto:
                {
-                id_producto: 2,
+                id_Producto: 2,
                 cantidad: 50,
                 precio: 1000,
                 descripcion: 'aceite 200ml'
@@ -41,7 +41,7 @@ export const recibo :Recibo [] =
             {
                producto:
                {
-                id_producto: 3,
+                id_Producto: 3,
                 cantidad: 100,
                 precio: 1500,
                 descripcion: 'Arroz Diana 500gr'
@@ -52,7 +52,7 @@ export const recibo :Recibo [] =
             {
                 producto:
                 {
-                    id_producto: 4,
+                    id_Producto: 4,
                     cantidad: 100,
                     precio: 2500,
                     descripcion: 'Café 100gr'

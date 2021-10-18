@@ -1,38 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { productos } from 'src/app/Mocks/inventario';
-
-interface Country {
-  name: string;
-  flag: string;
-  area: number;
-  population: number;
-}
-const COUNTRIES: Country[] = [
-  {
-    name: 'Russia',
-    flag: 'f/f3/Flag_of_Russia.svg',
-    area: 17075200,
-    population: 146989754
-  },
-  {
-    name: 'Canada',
-    flag: 'c/cf/Flag_of_Canada.svg',
-    area: 9976140,
-    population: 36624199
-  },
-  {
-    name: 'United States',
-    flag: 'a/a4/Flag_of_the_United_States.svg',
-    area: 9629091,
-    population: 324459463
-  },
-  {
-    name: 'China',
-    flag: 'f/fa/Flag_of_the_People%27s_Republic_of_China.svg',
-    area: 9596960,
-    population: 1409517397
-  }
-];
+import { Producto } from '../model/producto';
+import { ProductServiceService } from '../service/product-service.service';
 
 @Component({
   selector: 'app-mod-admin',
@@ -43,15 +12,46 @@ const COUNTRIES: Country[] = [
 
 export class ModAdminComponent implements OnInit {
 
-  countries = COUNTRIES;
-  producto = productos;
-  constructor() { }
-
-  ngOnInit(): void {
+  /*producto = productos;*/
+  productos = productos;
+  /*productos: Producto[];*/
+  result : string = ""
+  constructor(
+    private srvProduct: ProductServiceService
+  ) { 
+    this.productos = Array<Producto>();
   }
 
-  delete(prod: any)
-  {
+  ngOnInit(){
+    console.log(typeof this.productos)
+    this.srvProduct.getProduct().subscribe(
+      products => { 
+        console.log(products)
+        
+        this.productos = products 
+      })
+    console.log('result getProds: ', this.productos)
+  }
 
+  delete(prod: Producto)
+  {
+    this.srvProduct.delete(prod.id_Producto).subscribe(
+      response => this.result = response.toString()
+    )
+  }
+
+  prodId()
+  {
+    
+  }
+
+  cargarprod()
+  {
+    this.srvProduct.getProduct().subscribe(
+      products => { 
+        console.log(products)
+        
+        this.productos = products 
+      })
   }
 }

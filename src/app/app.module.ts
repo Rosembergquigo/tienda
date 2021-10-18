@@ -9,6 +9,10 @@ import { ModAdminComponent } from './mod-admin/mod-admin.component';
 import { DashComponent } from './dash/dash.component';
 import { ModPedidoComponent } from './mod-pedido/mod-pedido.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ReactiveFormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+import { FormProdComponent } from './form-prod/form-prod.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,11 +21,15 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ModCajaComponent,
     ModAdminComponent,
     DashComponent,
-    ModPedidoComponent
+    ModPedidoComponent,
+    FormProdComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    FormsModule,
     NgbModule
   ],
   providers: [],

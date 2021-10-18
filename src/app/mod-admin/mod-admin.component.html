@@ -13,15 +13,15 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let prod of producto; index as i" class="warning">
-        <th scope="row">{{ i + 1 }}</th>
+    <tr *ngFor="let prod of productos" class="warning">
+        <th scope="row">{{ prod.id_Producto }}</th>
         <td>
         {{ prod.descripcion }}
         </td>
         <td>{{ prod.cantidad }}</td>
         <td>{{ prod.precio }}</td>
         <!--<td><button type="button" name="editar" [routerLink]= "['/clientes/form', cliente.id]" class="btn btn-primary btn-sm">Editar</button></td>-->
-        <td><button type="button" name="editar" class="btn btn-primary btn-sm">Editar</button></td>
+        <td><button type="button" name="editar" class="btn btn-primary btn-sm" [routerLink]= "['/producto/form', prod.id_Producto]">Editar</button></td>
           <td><button type="button" name="eliminar" (click)='delete(prod)' class="btn btn-danger btn-sm">Eliminar</button></td>
     </tr>
     </tbody>
