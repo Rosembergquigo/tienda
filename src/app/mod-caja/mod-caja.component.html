@@ -17,10 +17,10 @@
         </button>
       </div>
       <div class="col">
-        Column
+        <h1>Total a Pagar</h1>
       </div>
       <div class="col">
-        Column
+        <h1>$ {{recibo.valor_total}} </h1>
       </div>
     </div>
     <div class="row">
@@ -35,21 +35,25 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let prodSel of productosSelect; let i = index">
+          <tr *ngFor="let prodSel of ordenesSelect; let i = index">
             <th scope="row">{{i + 1}}</th>
-            <td>{{prodSel.id_Producto}}</td>
-            <td>{{prodSel.descripcion}}</td>
+            <td>{{prodSel.producto.id_Producto}}</td>
+            <td>{{prodSel.producto.descripcion}}</td>
             <td>
-              <input type="number" min="1" max="50" value="{{prodSel.cantidad}}" (change)="cambiarValorTotal(prodSel.id_Producto)"> 
+              <input type="number" min="1" max="50" value="{{prodSel.cantidad}}" (change)="cambiarValorTotal(prodSel.producto.id_Producto)"> 
             </td>
-            <td>{{prodSel.precio * prodSel.cantidad}}</td>
+            <td>{{prodSel.valor_total}}</td>
           </tr>
         </tbody>
       </table>
     </div>
     <div class="row">
-      <div class="col">Total a Pagar</div>
-      <div class="col">$ 100000,00</div>
+      <div class="col">
+        <h1>Total a Pagar</h1>
+      </div>
+      <div class="col">
+        <h1>$ {{recibo.valor_total}} </h1>
+      </div>
       <div class="col"></div>
     </div>
 </div>

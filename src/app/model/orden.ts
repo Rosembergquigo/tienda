@@ -1,7 +1,7 @@
 import { Producto } from "./producto";
 
 export class Orden {
-    producto : Producto | undefined ;
+    producto: Producto = new Producto();
     cantidad: number = 0;
     valor_total: number= 0;
 }

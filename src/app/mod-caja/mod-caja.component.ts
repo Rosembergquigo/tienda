@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ProductServiceService } from '../service/product-service.service';
 import { productos } from 'src/app/Mocks/inventario';
 import { Producto } from '../model/producto';
+import { Orden } from '../model/orden';
+import { Recibo } from '../model/recibo';
 
 @Component({
   selector: 'app-mod-caja',
@@ -11,8 +13,10 @@ import { Producto } from '../model/producto';
 export class ModCajaComponent implements OnInit {
 
   productos = productos;
-  productosSelect : Array<Producto>;
-  cantidadCero: number = 1
+  productosSelect: Array<Producto> = [];
+  ordenesSelect: Array<Orden> = [];
+  recibo: Recibo = new Recibo();
+  cantidadCero: number = 1;
   constructor(
     private srvProduct: ProductServiceService
   ) {
@@ -20,7 +24,6 @@ export class ModCajaComponent implements OnInit {
     this.productos.map(re=>{
       re.checked = false;
     });
-    this.productosSelect = [];
    }
 
   ngOnInit() {
@@ -36,21 +39,33 @@ export class ModCajaComponent implements OnInit {
   {
     const array= this.productos.filter(data => data.checked === true)
     console.log ('array select', array)
-    this.productosSelect = array
+    for (let i in array)
+    {
+      this.ordenesSelect[i] = new Orden()
+      this.ordenesSelect[i].producto = array[i]
+      this.ordenesSelect[i].cantidad = 0
+      this.ordenesSelect[i].valor_total = array[i].precio * this.ordenesSelect[i].cantidad
+    }
+    console.log('orden select', this.ordenesSelect)
     
+    /*
     this.productosSelect.map(function(dato){
       dato.cantidad = 1
-    })
+    })*/
+    this.productosSelect = array
     console.log ('productos select', this.productosSelect)
   }
 
   cambiarValorTotal(id_Producto: number)
   {
-    for (let i in this.productosSelect) {
-      if (this.productosSelect[i].id_Producto === id_Producto) {
-        //this.productosSelect[i].cantidad +=1
-        this.productosSelect[i].precio = this.productosSelect[i].precio * this.productosSelect[i].cantidad
-      }            
+    for (let i in this.ordenesSelect) {
+      if(this.ordenesSelect[i].producto.id_Producto === id_Producto)
+      {
+        this.ordenesSelect[i].cantidad += 1
+        this.ordenesSelect[i].valor_total = this.ordenesSelect[i].producto.precio * this.ordenesSelect[i].cantidad
+
+        this.recibo.valor_total += this.ordenesSelect[i].valor_total
+      }
     }
   }
 
