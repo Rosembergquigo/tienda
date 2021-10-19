@@ -1,13 +1,13 @@
 <div class="container">
     <div class="row">
       <div class="col">
-        <input type="text" class="form-control" placeholder="Cédula del Cliente" aria-label="Cédula del cliente">
+        <input type="text" class="form-control" placeholder="Cédula del Cliente" aria-label="Cédula del cliente" [(ngModel)]="recibo.cedula">
       </div>
       <div class="col">
-        Column
+        
       </div>
       <div class="col">
-        Column
+        
       </div>
     </div>
     <div class="row">
@@ -20,7 +20,7 @@
         <h1>Total a Pagar</h1>
       </div>
       <div class="col">
-        <h1>$ {{recibo.valor_total}} </h1>
+        <h1>$ {{reciboVal_Total}} </h1>
       </div>
     </div>
     <div class="row">
@@ -49,10 +49,10 @@
     </div>
     <div class="row">
       <div class="col">
-        <h1>Total a Pagar</h1>
+        <button type="button" class="btn btn-primary" (click)="guardarCompra()">Guardar Compra</button>
       </div>
       <div class="col">
-        <h1>$ {{recibo.valor_total}} </h1>
+        
       </div>
       <div class="col"></div>
     </div>

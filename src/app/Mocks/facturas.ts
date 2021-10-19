@@ -5,7 +5,7 @@ export const recibo :Recibo [] =
 [
     {
         id_recibo : 1,
-        fecha: '22-09-2021',
+        fecha: '20211001',
         cedula : "10203040",
         productos : [
             {
@@ -35,7 +35,7 @@ export const recibo :Recibo [] =
     },
     {
         id_recibo : 2,
-        fecha: '21-09-2021',
+        fecha: '20211001',
         cedula : "40506070",
         productos : [
             {

@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Producto } from '../model/producto';
 import { Productos } from '../model/productos';
+import { Recibo } from '../model/recibo';
 
 @Injectable({
   providedIn: 'root'
@@ -38,5 +39,10 @@ export class ProductServiceService {
 
   delete(id: any) {
     return this.http.delete(`${this.url}editarProductos/${id}`)
+  }
+
+  crearPedido(recibo: Recibo)
+  {
+    return this.http.post(this.url + 'Pedido', recibo, {headers: this.httpHeaders})
   }
 }
