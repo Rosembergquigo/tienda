@@ -45,4 +45,15 @@ export class ProductServiceService {
   {
     return this.http.post(this.url + 'Pedido', recibo, {headers: this.httpHeaders})
   }
+
+  getPedidos()
+  {
+    return this.http.get<Recibo[]>(this.url + 'Pedido', {headers: this.httpHeaders});
+  }
+
+  getPedidoId(id: number)
+  {
+    console.log(this.url,'/Pedido/',id)
+    return this.http.get<Producto>(`${this.url}Pedido/${id}`)
+  }
 }

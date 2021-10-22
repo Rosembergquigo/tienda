@@ -5,6 +5,7 @@ import { FormProdComponent } from './form-prod/form-prod.component';
 import { ModAdminComponent } from './mod-admin/mod-admin.component';
 import { ModCajaComponent } from './mod-caja/mod-caja.component';
 import { ModPedidoComponent } from './mod-pedido/mod-pedido.component';
+import { PedidoDetalleComponent } from './pedido-detalle/pedido-detalle.component';
 
 const routes: Routes = [
   {path: '', component: DashComponent},

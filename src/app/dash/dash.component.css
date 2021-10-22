@@ -16,10 +16,11 @@ a
 
 .btn-dash
 {
-    background-color: aquamarine;
+    background-image: url("../../assets/img/cafe.png");
     height: 150px;
     width: 50px;
     border-radius: 5px;
+    
 }
 
 .col
@@ -37,4 +38,5 @@ a
     height: 100%;
     width: 100%;
     display:block;
+    color: white;
 }

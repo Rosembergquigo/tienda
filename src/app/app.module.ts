@@ -13,6 +13,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { FormProdComponent } from './form-prod/form-prod.component';
 import { FormsModule } from '@angular/forms';
+import { PedidoDetalleComponent } from './pedido-detalle/pedido-detalle.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FormsModule } from '@angular/forms';
     ModAdminComponent,
     DashComponent,
     ModPedidoComponent,
-    FormProdComponent
+    FormProdComponent,
+    PedidoDetalleComponent
   ],
   imports: [
     BrowserModule,

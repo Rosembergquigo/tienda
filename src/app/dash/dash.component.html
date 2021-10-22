@@ -14,35 +14,35 @@
     </div>
     <div class="row">
       <div class="col btn-dash">
-        <button class="btn btn-primary" (click)="open(content)">
+        <button class="btn btn-secundary" (click)="open(content)">
           <h2>Adiciona tus productos</h2>
         </button>
       </div>
       <div class="col btn-dash">
-        <button class="btn btn-primary" routerLink="/modAdmin">
+        <button class="btn btn-secundary" routerLink="/modAdmin">
           <h2>Validar Inventario</h2>
         </button>
       </div>
       <div class="col btn-dash">
-        <button class="btn btn-primary" routerLink="/modPedido">
+        <button class="btn btn-secundary" routerLink="/modPedido">
           <h2>Historial de Facturas</h2>
         </button>
       </div>
     </div>
     <div class="row">
       <div class="col btn-dash">
-        <button class="btn btn-primary" routerLink="/modAdmin">
+        <button class="btn btn-secundary" routerLink="/modAdmin">
           <h3>Reporte día</h3>
           <h2>{{fecha | date}}</h2>
         </button>
       </div>
       <div class="col btn-dash">
-        <button class="btn btn-primary" routerLink="/modAdmin">
+        <button class="btn btn-secundary" routerLink="/modAdmin">
           <h3>Reporte Mes</h3>
           <h2>{{fecha | date:'LLLL'}}</h2>
         </button>
       </div>
-      <div class="col btn-dash">
+      <div class="col">
         <a routerLink="/modAdmin"></a>
         
       </div>
